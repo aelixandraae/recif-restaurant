@@ -9,7 +9,9 @@
 <meta property="og:title" content="RÉCIF">
 <meta property="og:description" content="A seafood restaurant on the rocks above the sea. Concept project by Oleksandra Solohub.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="/img/68f4daaf.jpg">
+<meta property="og:image" content="https://recif-restaurant.vercel.app/img/68f4daaf.jpg">
+<meta property="og:url" content="https://recif-restaurant.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="image" href="img/68f4daaf.jpg">
 <style>
@@ -113,7 +115,7 @@ nav ul{align-items:center}
 .title em{font-size:1.04em}
 .lede{text-shadow:0 1px 3px #05060799,0 0 18px #050607cc;max-width:52ch;margin:0;font-size:clamp(14px,1.2vw,16px);line-height:1.75;color:#d9d2cc;text-wrap:balance;max-width:50ch}
 .actions{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:6px}
-.orb{position:relative;display:grid;font-family:var(--sans);color:var(--pearl);cursor:pointer;flex:none;place-items:center;width:132px;height:132px;border-radius:50%;
+.orb{position:relative;display:grid;align-content:center;font-family:var(--sans);color:var(--pearl);cursor:pointer;flex:none;place-items:center;width:132px;height:132px;border-radius:50%;
   border:1px solid #EEE7E066;background:#05060726;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
   font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;text-align:center;line-height:1.7;padding-left:.28em;
   transition:border-color .5s ease,box-shadow .5s ease,color .5s ease}
@@ -413,6 +415,8 @@ button.orb{appearance:none;-webkit-appearance:none}
 .mp-dish small{grid-column:1/-1;font-size:13px;line-height:1.55;color:var(--sub)}
 .mp-foot{margin-top:40px;font-size:12px;line-height:1.7;color:var(--sub)}
 .mp-next{margin-top:56px;display:flex;justify-content:flex-end}
+.orb-in{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.5}
+#mp-next-lbl{color:var(--coral)}
 
 @media (max-width:860px){
   .mp-body{grid-template-columns:1fr}
@@ -835,7 +839,7 @@ button.orb{appearance:none;-webkit-appearance:none}
     <div>
       <div id="mp-groups"></div>
       <p class="mp-foot">Prices include VAT. The kitchen will gladly talk you through allergens; please mention them when you book.</p>
-      <div class="mp-next"><button class="orb sm" id="mp-next2" type="button">Next<br><span id="mp-next-lbl"></span></button></div>
+      <div class="mp-next"><button class="orb sm" id="mp-next2" type="button"><span class="orb-in"><span id="mp-next-word">Next</span><span id="mp-next-lbl"></span></span></button></div>
     </div>
   </div>
 </div>
@@ -1148,7 +1152,7 @@ window.RECIF_MENU_FR=[
     attrStore.forEach(s=>s.el.setAttribute(s.attr,fr?s.fr:s.en));
     if(window.__recifReveal)window.__recifReveal();
     Object.keys(phEn).forEach(id=>{document.getElementById(id).placeholder=fr?PH[id]:phEn[id];});
-    if(nextBtn&&nextBtn.firstChild&&nextBtn.firstChild.nodeType===3)nextBtn.firstChild.textContent=fr?'Suite':'Next';
+    const nw=document.getElementById('mp-next-word');if(nw)nw.textContent=fr?'Suite':'Next';
     relabelSelects(fr);
     document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));
     if(window.__recifRender)window.__recifRender();
