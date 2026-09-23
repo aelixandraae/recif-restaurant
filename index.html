@@ -1,0 +1,1165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RÉCIF</title>
+<meta name="description" content="RÉCIF — a seafood restaurant carved into the granite above the Îles Sanguinaires, Ajaccio. Concept project.">
+<meta name="theme-color" content="#050607">
+<meta property="og:title" content="RÉCIF">
+<meta property="og:description" content="A seafood restaurant on the rocks above the sea. Concept project by Oleksandra Solohub.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/img/68f4daaf.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="img/68f4daaf.jpg">
+<style>
+html{color-scheme:dark;-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,400&family=Jost:wght@300;400;500&display=swap">
+</head>
+<body>
+<style>
+:root{
+  color-scheme:dark;
+  --abyss:#050607;
+  --ink:#0b0d0f;
+  --pearl:#EEE7E0;
+  --mist:#B8B2AD;
+  --coral:#E9BB7A;
+  --lagoon:#E9BB7A;
+  --sans:"Jost","Futura","Century Gothic","Helvetica Neue",Arial,sans-serif;
+  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id],footer[id]{scroll-margin-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--abyss);color:var(--pearl);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:1px solid var(--coral);outline-offset:4px}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px clamp(16px,3vw,40px);
+  background:var(--ink);font-size:11px;letter-spacing:.04em;color:var(--mist);border-bottom:1px solid #ffffff10}
+.topbar .info{display:flex;gap:28px;flex-wrap:wrap}
+.topbar .info span{display:inline-flex;align-items:center;gap:8px}
+.topbar svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.6}
+.social{display:flex;gap:16px}
+.social a:hover{color:var(--pearl)}
+
+.hero{position:relative;min-height:min(100svh,780px);display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+.bg{position:absolute;inset:0;z-index:-2;background:url(img/68f4daaf.jpg) 42% center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(ellipse 42% 55% at 50% 55%,#0506078c 0%,#05060700 100%),
+             radial-gradient(ellipse 85% 90% at 50% 45%,#05060700 55%,#050607b3 100%),
+             linear-gradient(180deg,#0506078c 0%,#05060759 22%,#05060759 60%,#050607bf 84%,#050607 100%)}
+nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:26px clamp(16px,3vw,40px)}
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:65;padding-top:calc(26px + env(safe-area-inset-top,0px));
+  border-bottom:1px solid transparent;transition:padding .4s ease,background-color .4s ease,border-color .4s ease,backdrop-filter .4s ease}
+.site-nav.scrolled{padding-block:calc(14px + env(safe-area-inset-top,0px)) 14px;background:#050607b8;border-bottom-color:#EEE7E01a;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hero{padding-top:84px}
+nav ul{display:flex;gap:clamp(20px,3vw,44px);list-style:none;margin:0;padding:0;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+nav ul:last-of-type{justify-content:flex-end}
+nav ul a{position:relative;padding-block:6px}
+nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--coral);transition:right .35s ease}
+nav ul a:hover::after{right:0}
+.logo{font-size:19px;font-weight:400;letter-spacing:.34em;padding-left:.34em}
+.logo em,.title em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;color:var(--coral)}
+.menu-btn{display:none;justify-self:end;position:relative;z-index:61;width:48px;height:48px;border-radius:50%;background:#05060740;border:1px solid #EEE7E059;cursor:pointer;transition:border-color .4s,box-shadow .4s}
+.menu-btn i{position:absolute;left:15px;right:15px;height:1px;background:var(--pearl);transition:transform .4s ease,top .4s ease}
+.menu-btn i:first-child{top:20px}.menu-btn i:last-child{top:27px}
+.menu-btn[aria-expanded="true"] i:first-child{top:23.5px;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] i:last-child{top:23.5px;transform:rotate(-45deg)}
+.menu-btn:hover,.menu-btn:focus-visible{border-color:var(--coral);outline:none;box-shadow:0 0 6px #E9BB7A99,0 0 20px #E9BB7A55}
+.mnav{position:fixed;inset:0;z-index:60;background:#050607f5;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;justify-content:space-between;padding:calc(110px + env(safe-area-inset-top,0px)) 24px calc(32px + env(safe-area-inset-bottom,0px));
+  opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s}
+.mnav.open{opacity:1;visibility:visible}
+.mnav ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;counter-reset:m}
+.mnav li{counter-increment:m}
+.mnav ol a{display:block;position:relative;padding-left:34px;font-size:clamp(34px,10vw,48px);font-weight:300;text-transform:uppercase;letter-spacing:.02em;line-height:1.25;
+  transform:translateY(14px);opacity:0;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s,color .3s}
+.mnav ol a::before{content:"0" counter(m);position:absolute;left:0;top:.55em;font-size:11px;letter-spacing:.2em;color:var(--mist);font-weight:500}
+.mnav ol a em{font-family:var(--serif);font-style:italic;text-transform:none;font-weight:400}
+.mnav ol a:hover,.mnav ol a:focus-visible{color:var(--coral);outline:none}
+.mnav.open ol a{transform:none;opacity:1}
+.mnav.open li:nth-child(2) a{transition-delay:.05s}.mnav.open li:nth-child(3) a{transition-delay:.1s}.mnav.open li:nth-child(4) a{transition-delay:.15s}.mnav.open li:nth-child(5) a{transition-delay:.2s}.mnav.open li:nth-child(6) a{transition-delay:.25s}
+nav ul{align-items:center}
+.lang{display:flex;align-items:center;gap:2px;color:#EEE7E059;font-size:11px}
+.lang button{background:none;border:0;cursor:pointer;color:var(--mist);font:500 11px var(--sans);letter-spacing:.2em;padding:6px 4px 6px 6px;transition:color .3s}
+.lang button[aria-pressed="true"]{color:var(--pearl);text-decoration:underline;text-decoration-color:var(--coral);text-underline-offset:6px}
+.lang button:hover,.lang button:focus-visible{color:var(--coral);outline:none}
+.site-nav ul:last-of-type li:last-child{margin-left:clamp(0px,1vw,12px);padding-left:clamp(12px,1.6vw,22px);border-left:1px solid #EEE7E026}
+.mnav-info{display:flex;flex-direction:column;gap:14px}
+.lang-lg button{font-size:13px;padding:8px 6px}
+.mnav-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;font-size:12px;line-height:1.8;color:var(--mist)}
+
+.side{position:absolute;left:clamp(16px,3vw,40px);top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:left center;
+  font-size:11px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;display:flex;align-items:center;gap:14px;white-space:nowrap}
+.side::after{content:"";width:48px;height:1px;background:var(--pearl);opacity:.5}
+.depth{position:absolute;right:clamp(16px,3vw,40px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+  font-size:11px;letter-spacing:.2em;color:var(--mist);font-variant-numeric:tabular-nums}
+.depth i{display:block;width:1px;height:90px;background:linear-gradient(var(--lagoon),transparent)}
+
+.content{margin:auto;width:min(100%,640px);padding:24px 16px 56px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.eyebrow{display:flex;align-items:center;gap:16px;font-size:11px;font-weight:500;letter-spacing:.38em;text-transform:uppercase;
+  color:#EEE7E0e6;text-shadow:0 0 8px #050607,0 0 18px #050607,0 0 30px #050607}
+.eyebrow::before,.eyebrow::after{content:"";width:32px;height:1px;background:#EEE7E080;box-shadow:0 0 8px #050607}
+.title{margin:0;font-weight:300;font-size:clamp(52px,8vw,116px);line-height:.9;letter-spacing:.16em;padding-left:.16em}
+.title em{font-size:1.04em}
+.lede{text-shadow:0 1px 3px #05060799,0 0 18px #050607cc;max-width:52ch;margin:0;font-size:clamp(14px,1.2vw,16px);line-height:1.75;color:#d9d2cc;text-wrap:balance;max-width:50ch}
+.actions{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:6px}
+.orb{position:relative;display:grid;font-family:var(--sans);color:var(--pearl);cursor:pointer;flex:none;place-items:center;width:132px;height:132px;border-radius:50%;
+  border:1px solid #EEE7E066;background:#05060726;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  font-size:11px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;text-align:center;line-height:1.7;padding-left:.28em;
+  transition:border-color .5s ease,box-shadow .5s ease,color .5s ease}
+.orb:hover,.orb:focus-visible{border-color:var(--coral);color:#fff;outline:none;
+  box-shadow:0 0 6px #E9BB7Acc,0 0 22px #E9BB7A80,0 0 48px #E9BB7A40,inset 0 0 14px #E9BB7A40}
+button.orb{appearance:none;-webkit-appearance:none}
+.orb.sm{width:104px;height:104px;font-size:10.5px}
+.orb:hover::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid var(--coral);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(1.35);opacity:0}}
+.hours{font-size:11px;line-height:1.9;letter-spacing:.14em;text-shadow:0 0 12px #050607;color:var(--mist);font-variant-numeric:tabular-nums}
+
+.content > *{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.content > :nth-child(2){animation-delay:.12s}.content > :nth-child(3){animation-delay:.24s}
+.content > :nth-child(4){animation-delay:.36s}.content > :nth-child(5){animation-delay:.48s}
+@keyframes rise{from{transform:translateY(18px)}to{transform:none}}
+
+@media (max-width:860px){
+  .topbar .info span:nth-child(n+2){display:none}
+  nav{grid-template-columns:1fr auto}
+  nav ul{display:none}
+  .menu-btn{display:block}
+  .logo{justify-self:start}
+  .side,.depth{display:none}
+  .bg{background-position:40% center}
+}
+@media (prefers-reduced-motion:reduce){.content > *,.orb::after{animation:none}}
+</style>
+
+  <nav class="site-nav" id="site-nav">
+    <ul><li><a href="#about">About</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li></ul>
+    <a class="logo" href="#">R<em>é</em>CIF</a>
+    <ul><li><a href="#reviews">Reviews</a></li><li><a href="#book">Book</a></li><li><a href="#contact">Contact</a></li><li><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="fr" aria-pressed="false">FR</button></div></li></ul>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><i></i><i></i></button>
+  </nav>
+
+  <div class="mnav" id="mnav" aria-label="Site menu">
+  <ol>
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">The <em>menu</em></a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#book">Book a <em>table</em></a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+  <div class="mnav-foot"><div class="mnav-info"><div class="lang lang-lg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="fr" aria-pressed="false">FR</button></div><span>Route des Sanguinaires, Ajaccio<br>Wed – Sun · 17:30 – 23:00</span></div><a class="orb sm" href="#book">Book<br>a table</a></div>
+</div>
+<header class="hero">
+  <div class="bg" role="img" aria-label="Glass restaurant on seaside rocks at dusk, candlelit terrace above the water"></div>
+  <div class="side">Welcome</div>
+
+  <div class="content">
+    <div class="eyebrow">Seafood · Raw Bar · Wine</div>
+    <h1 class="title">R<em>é</em>CIF</h1>
+    <p class="lede">A restaurant carved into the granite above the Îles Sanguinaires. Oysters from the Diana lagoon, day-boat fish from the Gulf of Ajaccio and herbs from the maquis, served as the sun goes down into the sea.</p>
+    <div class="actions"><a class="orb" href="#book">Book<br>a table</a><div class="hours">Wed – Sun · 17:30 – 23:00</div></div>
+  </div>
+</header>
+
+<style>
+/* ---------- shared ---------- */
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,4vw,48px)}
+.tag{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--mist)}
+.glowbg{position:absolute;inset:0;pointer-events:none;z-index:-1;
+  background:radial-gradient(ellipse 50% 32% at 65% 82%,#E9BB7A1a 0%,#8a4a1a12 45%,#05060700 75%)}
+
+/* ---------- about: intro ---------- */
+#about{position:relative;isolation:isolate;padding-block:clamp(72px,12vw,140px) clamp(56px,8vw,100px);overflow:hidden}
+.band{position:relative;height:clamp(220px,38vw,500px);overflow:hidden;background:#050607}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;
+  transform:scale(var(--z,1));transform-origin:50% 40%}
+.band::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,#050607 0%,#05060700 16%,#05060700 84%,#050607 100%),
+             linear-gradient(180deg,#050607 0%,#05060700 18%,#05060700 72%,#050607 100%),
+             radial-gradient(ellipse 70% 75% at 50% 45%,#05060700 50%,#05060766 100%)}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:32px 48px;margin-top:clamp(28px,4vw,48px)}
+.intro .side-col{display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.intro p{margin:0;max-width:34ch;font-size:14px;line-height:1.8;color:#cfc8c1}
+.big{margin:0;font-weight:300;text-transform:uppercase;font-size:clamp(34px,6.2vw,96px);line-height:.98;letter-spacing:.01em;text-align:right}
+.big .ln{display:block;white-space:nowrap}
+.big .ln:nth-child(2){padding-right:clamp(0px,6vw,90px)}
+.big em{font-family:var(--serif);font-style:italic;text-transform:none;font-weight:400;letter-spacing:0}
+.w{--t:1;display:inline-block;opacity:calc(.18 + .82*var(--t));filter:blur(calc((1 - var(--t))*9px));
+  color:color-mix(in srgb,var(--pearl) calc(var(--t)*100%),var(--coral))}
+
+/* ---------- about: pillars (pinned) ---------- */
+#pillars{--q:0;--a:0;position:relative;height:420vh}
+.pin{position:sticky;top:env(safe-area-inset-top,0px);height:100svh;overflow:hidden;isolation:isolate;display:flex;flex-direction:column}
+.pin .glowbg{opacity:calc(.35 + .65*var(--q));
+  background:radial-gradient(ellipse 60% 70% at 50% 60%,#E9BB7A2e 0%,#9c541d26 38%,#05060700 72%)}
+.pin .wrap{width:100%}
+.pin-top{display:flex;justify-content:space-between;align-items:center;padding-top:calc(72px + clamp(12px,3vh,32px))}
+.count{font-size:11px;letter-spacing:.2em;color:var(--mist);font-variant-numeric:tabular-nums}
+.count b{color:var(--pearl);font-weight:500}
+.reel-box{flex:1;display:grid;place-items:center;min-height:0}
+.reel{--lh:clamp(64px,13vw,180px);position:relative;height:calc(var(--lh)*3);width:100%;overflow:hidden;
+  -webkit-mask-image:linear-gradient(transparent 0,#000 28%,#000 72%,transparent 100%);mask-image:linear-gradient(transparent 0,#000 28%,#000 72%,transparent 100%)}
+.reel-track{transform:translateY(calc((1 - var(--a))*var(--lh)));will-change:transform}
+.reel-word{--d:0;display:block;height:var(--lh);line-height:var(--lh);text-align:center;font-size:calc(var(--lh)*.86);
+  font-weight:300;letter-spacing:.02em;text-transform:uppercase;
+  opacity:calc(1 - min(var(--d),1.6)*.55);filter:blur(calc(min(var(--d),2)*7px))}
+.reel-word em{font-family:var(--serif);font-style:italic;text-transform:none;color:var(--coral);font-weight:400}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;padding-bottom:clamp(28px,6vh,64px)}
+.col{opacity:.35;transition:opacity .5s ease}
+.col.on{opacity:1}
+.col h3{margin:0 0 10px;font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;display:flex;gap:10px;align-items:center}
+.col h3::before{content:"";width:14px;height:1px;background:var(--mist);transition:width .5s ease,background .5s ease}
+.col.on h3::before{width:28px;background:var(--coral)}
+.col p{margin:0;font-size:13px;line-height:1.7;color:#cfc8c1;max-width:30ch}
+
+@media (max-width:860px){
+  .intro{grid-template-columns:1fr}
+  .big{text-align:left}
+  .big .ln:nth-child(2){padding-right:0;padding-left:8vw}
+  #pillars{height:280vh}
+  .cols{grid-template-columns:1fr;gap:0;min-height:8.5em}
+  .col{display:none}
+  .col.on{display:block}
+  .grid{grid-template-columns:1fr}
+  .tall{grid-row:auto;min-height:340px}
+}
+@media (prefers-reduced-motion:reduce){
+  .w{--t:1 !important}
+  .reel-word{filter:none}
+  .card{transition:border-color .5s,box-shadow .5s}
+  .card.pre{--y:0px}
+}
+</style>
+
+<section id="about" aria-labelledby="about-h">
+  <div class="glowbg"></div>
+  <div class="wrap">
+    <div class="band"><img id="band-img" src="img/38504e73.jpg" alt="Aerial view of the round restaurant and its terraces on the rocks above the sea at night"></div>
+    <div class="intro">
+      <div class="side-col">
+        <span class="tag">(About)</span>
+        <p>RÉCIF is built into the rock: a ring of glass above the water, lit by candle and hearth. We cook what the boats bring into Ajaccio that morning, and nothing on the plate travels further than the bay you can see from your table.</p>
+      </div>
+      <h2 class="big" id="about-h" data-reveal>
+        <span class="ln">A table on</span>
+        <span class="ln">the edge of</span>
+        <span class="ln">the <em>reef</em></span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section id="pillars" aria-label="What we cook by">
+  <div class="pin">
+    <div class="glowbg"></div>
+    <div class="wrap pin-top">
+      <span class="tag">(What we cook by)</span>
+      <span class="count"><b id="count-n">01</b> / 04</span>
+    </div>
+    <div class="reel-box">
+      <div class="reel" aria-hidden="true">
+        <div class="reel-track">
+          <span class="reel-word">Tide</span>
+          <span class="reel-word">Stone</span>
+          <span class="reel-word">Fire</span>
+          <span class="reel-word">Salt</span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap cols">
+      <div class="col on"><h3>Tide</h3><p>The menu follows the water. Fish landed at dawn in Ajaccio, chalked on the board by noon, gone by evening.</p></div>
+      <div class="col"><h3>Stone</h3><p>Built into the rock, not on top of it. The dining room curves with the cliff so every table faces the sea.</p></div>
+      <div class="col"><h3>Fire</h3><p>An open hearth of olive and holm-oak wood. We cook over flame, simply, and let the fish speak for itself.</p></div>
+      <div class="col"><h3>Salt</h3><p>Oysters from the Diana lagoon, wild fennel and myrtle from the maquis, and sea salt dried on our own terrace.</p></div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ---------- menu: panel strip ---------- */
+#menu{position:relative;isolation:isolate;padding-block:clamp(72px,11vw,140px);overflow:hidden}
+#menu .glowbg{background:radial-gradient(ellipse 60% 45% at 50% 38%,#E9BB7A1c 0%,#9c541d14 40%,#05060700 70%)}
+.menu-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,56px)}
+.menu-head .big{text-align:left;margin-top:14px}
+.menu-head .note{max-width:32ch;font-size:13px;line-height:1.7;color:var(--mist);margin:0 0 6px}
+.mhead-right{display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.arrows{display:flex;gap:10px}
+.arw{width:56px;height:56px;border-radius:50%;border:1px solid #EEE7E059;background:none;color:var(--pearl);cursor:pointer;
+  display:grid;place-items:center;transition:border-color .4s,box-shadow .4s,color .4s}
+.arw svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.4}
+.arw:hover,.arw:focus-visible{border-color:var(--coral);color:var(--coral);outline:none;box-shadow:0 0 6px #E9BB7A99,0 0 22px #E9BB7A55}
+.arw:disabled{opacity:.3;pointer-events:none}
+
+.strip{--blur:0px;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;
+  padding-inline:max(clamp(16px,4vw,48px),calc((100vw - 1240px)/2 + clamp(16px,4vw,48px)));scroll-padding-inline:max(clamp(16px,4vw,48px),calc((100vw - 1240px)/2 + clamp(16px,4vw,48px)))}
+.strip::-webkit-scrollbar{display:none}
+.strip.drag{cursor:grabbing;scroll-snap-type:none}
+.strip.drag .panel{pointer-events:none}
+.panel{--bg:#0b0d0f;--fg:var(--pearl);--sub:#EEE7E099;--line:#EEE7E022;
+  position:relative;flex:0 0 clamp(250px,24vw,330px);height:clamp(460px,40vw,560px);scroll-snap-align:start;
+  background:var(--bg);color:var(--fg);display:flex;flex-direction:column;justify-content:space-between;gap:16px;
+  padding:22px 22px 24px;border-right:1px solid var(--line);overflow:hidden;
+  filter:blur(var(--blur));transition:transform .6s cubic-bezier(.2,.7,.2,1);transform-origin:left center}
+.panel:first-child{border-radius:14px 0 0 14px}
+.panel:last-child{border-radius:0 14px 14px 0;border-right:0}
+.panel.gold{--bg:#E9BB7A;--fg:#0b0d0f;--sub:#0b0d0fb3;--line:#0b0d0f26}
+.panel.pearl{--bg:#EEE7E0;--fg:#0b0d0f;--sub:#0b0d0f99;--line:#0b0d0f1f}
+.p-top{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;position:relative;z-index:1}
+.p-top span:last-child{color:var(--sub);letter-spacing:.14em}
+.p-img{position:absolute;overflow:hidden;z-index:0}
+.p-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:filter .7s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.gold .p-img img,.pearl .p-img img{mix-blend-mode:multiply}
+.p-img.circle{width:118%;aspect-ratio:1;border-radius:50%;left:-44%;top:17%}
+.p-img.full{inset:0}
+.p-img.full img{object-position:50% 62%}
+.p-img.full img[alt^="Salad"]{object-position:50% 70%}
+.p-img.full img[alt^="Gin"]{object-position:50% 55%}
+.p-img.full img[alt^="Panna"]{object-position:50% 88%}
+/* align dishes to one line across cards */
+.p-img.full{--k:1.35;--t:.47;--c:.55}
+.p-img.full img{position:absolute;left:50%;width:auto;height:calc(var(--k)*100%);max-width:none;
+  top:calc((var(--t) - var(--c)*var(--k))*100%);transform:translateX(-50%);object-fit:fill}
+.panel:hover .p-img.full img,.panel:focus-visible .p-img.full img{transform:translateX(-50%) scale(1.05)}
+.p-img.full:has(img[alt^="Oyster"]){--c:.57}
+.p-img.full:has(img[alt^="Chargrilled"]){--c:.62}
+.p-img.full:has(img[alt^="Salad"]){--c:.73}
+.p-img.full:has(img[alt^="Panna"]){--c:.69}
+.p-img.full:has(img[alt^="Gin"]){--c:.52}
+.p-img.full:has(img[alt^="Chef"]){--c:.6}
+.full-shade{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,#0b0d0f 0%,#0b0d0fcc 12%,#0b0d0f00 34%,#0b0d0f00 52%,#0b0d0fd9 76%,#0b0d0f 100%)}
+.mp-img img{object-position:50% 60%}
+.p-img.half{left:0;right:0;bottom:0;height:60%}
+.p-img.half img{object-position:50% 62%}
+.p-img.tall{left:22px;right:22px;top:64px;height:46%}
+.p-img.arch{left:22px;right:22px;top:64px;height:56%;border-radius:999px 999px 0 0}
+.p-img.arch img{object-position:50% 58%}
+.sun{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;left:13%;top:22%;background:none;border:1px solid #E9BB7A99;color:var(--pearl);
+  display:grid;place-items:center;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(48px,4.4vw,64px);transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.sun small{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+.p-bottom{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px}
+.p-title{font-size:clamp(26px,2.3vw,32px);font-weight:300;line-height:1.05;text-transform:uppercase;letter-spacing:.02em}
+.p-title em{font-family:var(--serif);font-style:italic;text-transform:none;font-weight:400}
+.panel:not(.gold):not(.pearl) .p-title em{color:var(--coral)}
+.p-desc{font-size:12px;line-height:1.6;color:var(--sub);max-width:28ch}
+.p-open{display:flex;align-items:center;gap:10px;margin-top:6px;font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase}
+.p-open::after{content:"";height:1px;width:18px;background:currentColor;transition:width .5s ease}
+.panel:hover .p-img img,.panel:focus-visible .p-img img{filter:grayscale(0) contrast(1);transform:scale(1.05)}
+.panel:hover .p-open::after,.panel:focus-visible .p-open::after{width:44px}
+.panel:hover .sun{transform:scale(1.05)}
+.panel:focus-visible{outline:1px solid var(--coral);outline-offset:-4px}
+.half-shade{position:absolute;inset:auto 0 0 0;height:60%;z-index:0;background:linear-gradient(180deg,var(--bg) 0%,transparent 40%)}
+.strip-hint{margin-top:18px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mist)}
+.bar{flex:1;max-width:220px;height:1px;background:#EEE7E022;align-self:center;margin-left:20px;position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0;background:var(--coral);transform-origin:left;transform:scaleX(var(--p,.2))}
+
+/* ---------- category page ---------- */
+.expander{position:fixed;z-index:90;pointer-events:none;border-radius:0;
+  transition:top .75s cubic-bezier(.7,0,.2,1),left .75s cubic-bezier(.7,0,.2,1),width .75s cubic-bezier(.7,0,.2,1),height .75s cubic-bezier(.7,0,.2,1),border-radius .75s}
+.mpage{--bg:#0b0d0f;--fg:var(--pearl);--sub:#EEE7E0a6;--line:#EEE7E01f;--acc:var(--coral);
+  position:fixed;inset:0;z-index:100;background:var(--bg);color:var(--fg);overflow-y:auto;overscroll-behavior:contain;
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);opacity:0;transition:opacity .45s ease}
+.mpage.in{opacity:1}
+.mp-body{transition:opacity .26s ease,transform .26s ease}
+.mp-body.swap{opacity:0;transform:translateY(8px)}
+.mpage[data-tone="gold"]{--bg:#E9BB7A;--fg:#0b0d0f;--sub:#0b0d0fb3;--line:#0b0d0f29;--acc:#0b0d0f}
+.mpage[data-tone="pearl"]{--bg:#EEE7E0;--fg:#0b0d0f;--sub:#0b0d0f99;--line:#0b0d0f1f;--acc:#9a6424}
+.mp-bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px clamp(16px,4vw,48px);background:var(--bg);border-bottom:1px solid var(--line)}
+.mp-btn{background:none;border:1px solid var(--line);color:var(--fg);font:500 11px var(--sans);letter-spacing:.24em;text-transform:uppercase;
+  width:48px;height:48px;padding:0;justify-content:center;border-radius:50%;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:border-color .4s,box-shadow .4s}
+.mp-btn:hover,.mp-btn:focus-visible{border-color:var(--acc);outline:none;box-shadow:0 0 16px color-mix(in srgb,var(--acc) 35%,transparent)}
+.mp-btn .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.mp-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5}
+.mp-nav{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.2em;font-variant-numeric:tabular-nums;color:var(--sub)}
+.mp-nav b{color:var(--fg);font-weight:500}
+.mp-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(32px,6vw,96px);
+  max-width:1240px;margin:0 auto;padding:clamp(32px,6vw,80px) clamp(16px,4vw,48px) 96px}
+.mp-left{position:sticky;top:96px;align-self:start;display:flex;flex-direction:column;gap:20px}
+.mp-no{font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--sub)}
+.mp-left h2{margin:0;font-weight:300;text-transform:uppercase;font-size:clamp(44px,6.4vw,96px);line-height:.95;letter-spacing:.01em}
+.mp-left h2 em{font-family:var(--serif);font-style:italic;text-transform:none;font-weight:400;color:var(--acc)}
+.mp-intro{margin:0;font-size:14px;line-height:1.75;color:var(--sub);max-width:40ch}
+.mp-img{margin:8px 0 0;aspect-ratio:4/5;width:min(100%,440px);max-height:62vh;overflow:hidden;border-radius:2px;max-width:100%}
+.mp-img img{width:100%;height:100%;object-fit:cover}
+.mp-img{box-shadow:none;border-radius:0;
+  position:relative}
+.mp-img::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,var(--bg) 0%,transparent 22%,transparent 78%,var(--bg) 100%),linear-gradient(180deg,var(--bg) 0%,transparent 18%,transparent 76%,var(--bg) 100%)}
+.mp-img img{filter:saturate(.9) brightness(.92)}
+.mp-img.sunimg{aspect-ratio:1;max-width:340px;border-radius:50%;background:none;border:1px solid #E9BB7A99;color:var(--pearl);display:grid;place-items:center;
+  font-family:var(--serif);font-style:italic;font-size:88px}
+.mp-group+.mp-group{margin-top:48px}
+.mp-group h3{margin:0 0 6px;font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--sub);
+  display:flex;align-items:center;gap:12px}
+.mp-group h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.mp-list{list-style:none;margin:0;padding:0}
+.mp-dish{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px;padding:20px 0;border-bottom:1px solid var(--line);
+  transform:translateY(14px);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.mpage.in .mp-dish{transform:none}
+.mp-dish span{font-size:clamp(17px,1.5vw,20px);font-weight:400;letter-spacing:.01em}
+.mp-dish b{font-weight:400;font-size:16px;font-variant-numeric:tabular-nums;color:var(--acc)}
+.mp-dish small{grid-column:1/-1;font-size:13px;line-height:1.55;color:var(--sub)}
+.mp-foot{margin-top:40px;font-size:12px;line-height:1.7;color:var(--sub)}
+.mp-next{margin-top:56px;display:flex;justify-content:flex-end}
+
+@media (max-width:860px){
+  .mp-body{grid-template-columns:1fr}
+  .mp-left{position:static}
+  .mp-img{max-height:320px}
+  .mp-btn .lbl{display:none}
+  .arw{width:48px;height:48px}
+}
+@media (prefers-reduced-motion:reduce){
+  .panel{filter:none;transition:none}
+  .expander{transition:none}
+  .mpage{transition:none}
+  .mp-dish{transform:none;transition:none}
+}
+</style>
+
+<section id="menu" aria-labelledby="menu-h">
+  <div class="glowbg"></div>
+  <div class="wrap">
+    <div class="menu-head">
+      <div>
+        <span class="tag">(Menu)</span>
+        <h2 class="big" id="menu-h" data-reveal>
+          <span class="ln">Taste</span>
+          <span class="ln">the <em>tide</em></span>
+        </h2>
+      </div>
+      <div class="mhead-right">
+        <p class="note">Six chapters, written each afternoon with the catch. Open one to see the full list.</p>
+        <div class="arrows">
+          <button class="arw" id="arw-prev" type="button" aria-label="Previous chapter"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arw" id="arw-next" type="button" aria-label="Next chapter"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip" id="strip" aria-label="Menu chapters">
+    <a class="panel" href="#menu-raw-bar" data-cat="raw-bar">
+      <span class="p-top"><span>01 · Raw bar</span><span>6 dishes</span></span>
+      <span class="p-img full"><img loading="lazy" decoding="async" src="img/a2b8e7f2.jpg" alt="Oyster with caviar on crushed ice"></span><span class="full-shade"></span>
+      <span class="p-bottom"><span class="p-title">From the <em>ice</em></span><span class="p-desc">Oysters, crudo and cured fish, straight from the morning boats.</span><span class="p-open">Open</span></span>
+    </a>
+    <a class="panel" href="#menu-hearth" data-cat="hearth">
+      <span class="p-top"><span>02 · Hearth</span><span>6 dishes</span></span>
+      <span class="p-img full"><img loading="lazy" decoding="async" src="img/6fed0602.jpg" alt="Chargrilled octopus with pearl onions and herb oil"></span><span class="full-shade"></span>
+      <span class="p-bottom"><span class="p-title">From the <em>fire</em></span><span class="p-desc">Whole fish and shellfish cooked over olive wood.</span><span class="p-open">Open</span></span>
+    </a>
+    <a class="panel" href="#menu-garden" data-cat="garden">
+      <span class="p-top"><span>03 · Garden</span><span>5 dishes</span></span>
+      <span class="p-img full"><img loading="lazy" decoding="async" src="img/dd715115.jpg" alt="Salad of rocket, mozzarella and charred tomatoes on a terrace at sunset"></span><span class="full-shade"></span>
+      <span class="p-bottom"><span class="p-title">Shore &amp; <em>field</em></span><span class="p-desc">Garden vegetables, maquis herbs and island olive oil.</span><span class="p-open">Open</span></span>
+    </a>
+    <a class="panel" href="#menu-desserts" data-cat="desserts">
+      <span class="p-top"><span>04 · Desserts</span><span>5 dishes</span></span>
+      <span class="p-img full"><img loading="lazy" decoding="async" src="img/3bd48f62.jpg" alt="Panna cotta with passion fruit and honey tuile"></span><span class="full-shade"></span>
+      <span class="p-bottom"><span class="p-title">Sweet <em>tide</em></span><span class="p-desc">Panna cotta, chestnut honey and Corsican cheese.</span><span class="p-open">Open</span></span>
+    </a>
+    <a class="panel" href="#menu-drinks" data-cat="drinks">
+      <span class="p-top"><span>05 · Drinks</span><span>10 pours</span></span>
+      <span class="p-img full"><img loading="lazy" decoding="async" src="img/ba6db2c2.jpg" alt="Gin and tonic with rosemary and lemon at sunset"></span><span class="full-shade"></span>
+      <span class="p-bottom"><span class="p-title">Salt &amp; <em>glass</em></span><span class="p-desc">Coastal wines, cocktails with a pinch of the sea, and zero-proof.</span><span class="p-open">Open</span></span>
+    </a>
+    <a class="panel" href="#menu-tasting" data-cat="tasting">
+      <span class="p-top"><span>06 · Tasting</span><span>7 courses</span></span>
+      <span class="p-img full"><img loading="lazy" decoding="async" src="img/m-plating.jpg" alt="Chef plating grilled prawns with tweezers"></span><span class="full-shade"></span>
+      <span class="p-bottom"><span class="p-title">The whole <em>reef</em></span><span class="p-desc">Seven courses from the catch, for the whole table. €95.</span><span class="p-open">Open</span></span>
+    </a>
+  </div>
+  <div class="wrap strip-hint"><span>Drag or use the arrows</span><span class="bar"><i id="strip-bar"></i></span></div>
+</section>
+<style>
+/* ---------- gallery ---------- */
+#gallery{position:relative;isolation:isolate;padding-block:clamp(72px,10vw,130px) clamp(40px,6vw,80px)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 32px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,56px)}
+.sec-head .big{text-align:left;margin-top:14px}
+.sec-head .note{max-width:34ch;font-size:13px;line-height:1.7;color:var(--mist);margin:0 0 6px}
+.gal{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,240px);gap:12px}
+.gal figure{position:relative;margin:0;overflow:hidden;border-radius:2px;background:#0b0d0f}
+.gal img{width:100%;height:100%;object-fit:cover;filter:brightness(.86) saturate(.92);transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter .7s ease}
+.gal figure::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 90% 85% at 50% 50%,#05060700 55%,#05060773 100%),linear-gradient(180deg,#05060700 60%,#050607b3 100%)}
+.gal figcaption{position:absolute;left:16px;bottom:14px;z-index:1;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#EEE7E0d9}
+.gal figure:hover img{transform:scale(1.04);filter:brightness(1) saturate(1)}
+.g1{grid-column:span 4;grid-row:span 2}.g2{grid-column:span 8}.g3{grid-column:span 4}.g4{grid-column:span 4}.g5{grid-column:span 7}.g6{grid-column:span 5}
+.g1 img{object-position:50% 60%}.g2 img{object-position:50% 55%}.g3 img{object-position:60% 55%}.g4 img{object-position:60% 45%}.g5 img{object-position:35% 45%}.g6 img{object-position:70% 50%}
+
+/* ---------- reviews ---------- */
+#reviews{position:relative;isolation:isolate;padding-block:clamp(56px,8vw,110px) clamp(72px,10vw,130px);overflow:hidden}
+#reviews .glowbg{background:radial-gradient(ellipse 55% 45% at 50% 55%,#E9BB7A17 0%,#9c541d10 40%,#05060700 72%)}
+.rv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:32px clamp(32px,6vw,96px);align-items:start}
+.rv-score{display:flex;flex-direction:column;gap:14px;padding-top:8px}
+.rv-num{font-family:var(--serif);font-style:italic;font-size:clamp(64px,7vw,96px);line-height:.9}
+.rv-num small{font-family:var(--sans);font-style:normal;font-size:.22em;color:var(--mist);letter-spacing:.1em;margin-left:6px}
+.stars{display:flex;gap:6px;color:var(--coral)}
+.stars svg{width:14px;height:14px;fill:currentColor}
+.rv-score p{margin:0;font-size:13px;line-height:1.7;color:var(--mist);max-width:26ch}
+.rv-stage{position:relative;display:grid}
+.quote{grid-area:1/1;display:flex;flex-direction:column;gap:26px;opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.quote.on{opacity:1;transform:none;pointer-events:auto}
+.quote blockquote{margin:0;font-size:clamp(22px,2.5vw,34px);font-weight:300;line-height:1.35;letter-spacing:.005em;text-wrap:pretty}
+.quote blockquote em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--coral)}
+.quote footer{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+.quote footer::before{content:"";width:40px;height:1px;background:#EEE7E066}
+.quote footer span{color:var(--mist);font-weight:400;letter-spacing:.14em}
+.rv-ctrl{display:flex;align-items:center;gap:18px;margin-top:28px}
+.rv-count{font-size:11px;letter-spacing:.2em;color:var(--mist);font-variant-numeric:tabular-nums}
+.rv-count b{color:var(--pearl);font-weight:500}
+.rv-bar{flex:1;max-width:200px;height:1px;background:#EEE7E022;position:relative;overflow:hidden}
+.rv-bar i{position:absolute;inset:0;background:var(--coral);transform-origin:left;transform:scaleX(var(--p,.25));transition:transform .6s ease}
+
+@media (max-width:860px){
+  .gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(150px,42vw,240px);gap:8px}
+  .g1{grid-column:span 1;grid-row:span 2}.g2,.g3,.g4,.g5{grid-column:span 1}.g6{grid-column:span 2}
+  .rv{grid-template-columns:1fr}
+  .rv-score{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 18px}
+}
+@media (prefers-reduced-motion:reduce){.quote{transition:none}.gal img{transition:none}}
+</style>
+
+<section id="gallery" aria-labelledby="gal-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">(Gallery)</span>
+        <h2 class="big" id="gal-h" data-reveal><span class="ln">Evenings</span><span class="ln">at the <em>reef</em></span></h2>
+      </div>
+      <p class="note">The room, the terrace and the rock at the hour most guests come for: the last forty minutes of light.</p>
+    </div>
+    <div class="gal">
+      <figure class="g1"><img loading="lazy" decoding="async" src="img/53d5fb3a.jpg" alt="Terrace tables and lit stairs on the rocks at sunset"><figcaption>The terrace</figcaption></figure>
+      <figure class="g2"><img loading="lazy" decoding="async" src="img/g-guests.jpg" alt="Guests at candlelit tables under olive trees, the lights of the bay behind"><figcaption>Saturday night</figcaption></figure>
+      <figure class="g3"><img loading="lazy" decoding="async" src="img/g-glass.jpg" alt="Curved glass dining room with an olive tree, facing a rock in the sea"><figcaption>The glass room</figcaption></figure>
+      <figure class="g4"><img loading="lazy" decoding="async" src="img/g-bar.jpg" alt="Curved bar with backlit shelves and a bartender mixing a drink"><figcaption>The bar</figcaption></figure>
+      <figure class="g5"><img loading="lazy" decoding="async" src="img/g-kitchen.jpg" alt="Chefs plating dishes under copper lamps in the open kitchen"><figcaption>The kitchen</figcaption></figure>
+      <figure class="g6"><img loading="lazy" decoding="async" src="img/g-cliff.jpg" alt="The restaurant's glass pavilions and stairs on the granite point at dusk"><figcaption>Pointe de la Parata</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" aria-labelledby="rv-h">
+  <div class="glowbg"></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">(Reviews)</span>
+        <h2 class="big" id="rv-h" data-reveal><span class="ln">Words from</span><span class="ln">the <em>table</em></span></h2>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="rv-score">
+        <div class="rv-num">4.9<small>/ 5</small></div>
+        <div class="stars" aria-label="Five stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></svg></div>
+        <p>Average guest rating. Sample reviews written for this concept.</p>
+      </div>
+      <div>
+        <div class="rv-stage" id="rv-stage" aria-live="polite">
+          <figure class="quote on" style="margin:0"><blockquote>We booked for the sunset and stayed long after it. The octopus from the hearth was the best thing we ate on the island, and the waiter <em>timed the dessert</em> to the last light.</blockquote><footer>Camille &amp; Julien <span>· Lyon · June</span></footer></figure>
+          <figure class="quote" style="margin:0"><blockquote>Quiet, candlelit and completely unhurried. We let the kitchen choose the tasting menu and every course <em>tasted of the sea</em> we were looking at.</blockquote><footer>Marco R. <span>· Milan · July</span></footer></figure>
+          <figure class="quote" style="margin:0"><blockquote>Oysters from the lagoon, a glass of Vermentino and the Sanguinaires turning pink. <em>A perfect first evening</em> in Ajaccio. Book the terrace, it is worth it.</blockquote><footer>Sophie L. <span>· London · August</span></footer></figure>
+          <figure class="quote" style="margin:0"><blockquote>They remembered it was our anniversary without us asking twice. The table by the glass rail, a candle and <em>nothing but water</em> between us and the horizon.</blockquote><footer>Anna &amp; Tomasz <span>· Kraków · September</span></footer></figure>
+        </div>
+        <div class="rv-ctrl">
+          <button class="arw" id="rv-prev" type="button" aria-label="Previous review"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arw" id="rv-next" type="button" aria-label="Next review"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+          <span class="rv-count"><b id="rv-n">01</b> / 04</span>
+          <span class="rv-bar" id="rv-bar"><i></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(()=>{
+  const qs=[...document.querySelectorAll('#rv-stage .quote')];let i=0,timer=null;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const show=n=>{i=(n+qs.length)%qs.length;qs.forEach((q,k)=>q.classList.toggle('on',k===i));
+    document.getElementById('rv-n').textContent=String(i+1).padStart(2,'0');
+    document.getElementById('rv-bar').style.setProperty('--p',((i+1)/qs.length).toFixed(3));};
+  const restart=()=>{clearInterval(timer);if(!reduce)timer=setInterval(()=>show(i+1),7000);};
+  document.getElementById('rv-prev').onclick=()=>{show(i-1);restart();};
+  document.getElementById('rv-next').onclick=()=>{show(i+1);restart();};
+  const st=document.getElementById('rv-stage');let x0=null;
+  st.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;},{passive:true});
+  st.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){show(i+(dx<0?1:-1));restart();}x0=null;});
+  show(0);restart();
+})();
+</script>
+
+<style>
+/* ---------- booking ---------- */
+#book{position:relative;isolation:isolate;overflow:hidden;padding:clamp(80px,12vw,160px) clamp(16px,4vw,48px)}
+.book-bg{position:absolute;inset:-40px;z-index:-2;background:url(img/47fddaf5.jpg) center 55%/cover no-repeat;filter:blur(3px) brightness(.8) saturate(.95);transform:scale(1.04)}
+.bform[hidden],.book-done[hidden]{display:none}
+#book::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,#050607 0%,#05060700 22%,#05060700 70%,#050607 100%),
+             radial-gradient(ellipse 60% 70% at 50% 50%,#05060726 0%,#05060799 100%)}
+.book-card{max-width:760px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,6vw,72px) clamp(36px,5vw,56px);
+  border:1px solid #EEE7E033;border-radius:14px;background:#0b0d0f59;
+  backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1)}
+.book-card h2{margin:0 0 clamp(32px,5vw,52px);text-align:center;font-family:var(--sans);font-weight:300;font-style:normal;
+  font-size:clamp(34px,5vw,60px);letter-spacing:.04em;text-transform:uppercase;line-height:1;text-wrap:balance}
+.book-card h2 em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;color:var(--coral)}
+.bform{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:36px 32px}
+.fld{display:flex;flex-direction:column;gap:10px;min-width:0}
+.fld.w3{grid-column:span 3}.fld.w2{grid-column:span 2}.fld.w6{grid-column:1/-1}
+.fld label{font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--pearl)}
+.fld input,.fld select{appearance:none;-webkit-appearance:none;width:100%;background:transparent;border:0;border-bottom:1px solid #EEE7E040;border-radius:0;
+  color:#EEE7E0cc;font:300 14px var(--sans);padding:6px 0 10px;transition:border-color .3s}
+.fld input::placeholder{color:#EEE7E066}
+.fld select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EEE7E0' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") right 2px center/14px no-repeat;padding-right:24px;cursor:pointer}
+.fld select option{background:#0b0d0f;color:var(--pearl)}
+.fld input[type=date]{color-scheme:dark}
+.fld input:focus,.fld select:focus{outline:none;border-bottom-color:var(--coral)}
+.fld input:user-invalid{border-bottom-color:#d98a7a}
+.book-actions{grid-column:1/-1;display:flex;justify-content:center;margin-top:8px}
+.book-note{grid-column:1/-1;text-align:center;font-size:12px;color:var(--mist);margin:-8px 0 0}
+.book-done{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;padding-block:12px}
+.book-done p{margin:0;max-width:40ch;font-size:15px;line-height:1.7;color:#d9d2cc}
+.seat{border:0;margin:0;padding:0}
+.seat legend{padding:0;margin-bottom:12px;font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--pearl)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;cursor:pointer}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:9px 16px;border:1px solid #EEE7E040;border-radius:999px;font-size:13px;color:#EEE7E0cc;transition:border-color .3s,color .3s,box-shadow .3s}
+.chip:hover span{border-color:#EEE7E099}
+.chip input:checked+span{border-color:var(--coral);color:var(--pearl);box-shadow:0 0 12px #E9BB7A40}
+.chip input:focus-visible+span{outline:1px solid var(--coral);outline-offset:3px}
+.ticket{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:6px 0 0;width:100%;max-width:560px;border:1px solid #EEE7E026;border-radius:12px;overflow:hidden;background:#EEE7E01a}
+.ticket div{background:#0b0d0fcc;padding:14px 10px;display:flex;flex-direction:column;gap:6px}
+.ticket dt{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mist)}
+.ticket dd{margin:0;font-size:15px;color:var(--pearl)}
+.demo-note{font-size:12px!important;line-height:1.7!important;color:var(--mist)!important;max-width:52ch!important}
+@media (max-width:640px){.ticket{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.book-done strong{font-weight:400;color:var(--coral)}
+.link-btn{background:none;border:0;border-bottom:1px solid #EEE7E059;color:var(--pearl);font:500 11px var(--sans);letter-spacing:.26em;text-transform:uppercase;padding:6px 0;cursor:pointer}
+.link-btn:hover{border-color:var(--coral);color:var(--coral)}
+@media (max-width:640px){
+  .fld.w3,.fld.w2{grid-column:1/-1}
+  .bform{gap:28px}
+}
+</style>
+
+<section id="book" aria-labelledby="book-h">
+  <div class="book-bg" role="img" aria-label="Candlelit table at the edge of the terrace at sunset"></div>
+  <div class="book-card">
+    <h2 id="book-h">Table for <em>you</em></h2>
+    <form class="bform" id="bform" novalidate>
+      <div class="fld w3"><label for="b-name">Name</label><input id="b-name" name="name" autocomplete="name" placeholder="Your name" required></div>
+      <div class="fld w3"><label for="b-phone">Phone number</label><input id="b-phone" name="phone" type="tel" autocomplete="tel" placeholder="+33 (_) __ __ __ __" required></div>
+      <div class="fld w2"><label for="b-date">Date</label><select id="b-date" name="date"></select></div>
+      <div class="fld w2"><label for="b-time">Time</label><select id="b-time" name="time"></select></div>
+      <div class="fld w2"><label for="b-guests">Guests</label><select id="b-guests" name="guests"></select></div>
+      <fieldset class="fld w6 seat" id="b-seat"><legend>Where would you like to sit?</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="seat" value="terrace" checked><span>Terrace</span></label>
+          <label class="chip"><input type="radio" name="seat" value="glass"><span>Glass room</span></label>
+          <label class="chip"><input type="radio" name="seat" value="bar"><span>Bar</span></label>
+          <label class="chip"><input type="radio" name="seat" value="any"><span>No preference</span></label>
+        </div></fieldset>
+      <div class="fld w6"><label for="b-note">Wishes <span style="color:var(--mist);font-weight:300">(optional)</span></label><input id="b-note" name="note" placeholder="A birthday, a table by the glass, allergies…"></div>
+      <div class="book-actions">
+        <button class="orb" type="submit">Book<br>a table</button>
+      </div>
+      <p class="book-note">We confirm every booking by phone within the hour. Wed – Sun · 17:30 – 23:00</p>
+    </form>
+    <div class="book-done" id="book-done" hidden>
+      <span class="tag" id="book-ref"></span>
+      <p id="book-msg"></p>
+      <dl class="ticket" id="book-ticket"></dl>
+      <p class="demo-note" id="book-demo"></p>
+      <button class="link-btn" id="book-again" type="button">Change booking</button>
+    </div>
+  </div>
+</section>
+<style>
+/* ---------- footer ---------- */
+#contact{position:relative;isolation:isolate;overflow:hidden;background:#050607}
+.f-top{position:relative;isolation:isolate}
+.f-mist{position:absolute;inset:0;z-index:-1;
+  background:url(img/fb445067.jpg) center 60%/cover no-repeat;filter:blur(10px) grayscale(.35) brightness(.5);transform:scale(1.08);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 18%,#000 45%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 55%,transparent 100%)}
+.f-intro{text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px;padding:clamp(96px,14vw,180px) 16px clamp(72px,9vw,120px)}
+.f-mark{font-size:22px;font-weight:400;letter-spacing:.34em;padding-left:.34em}
+.f-mark em{font-family:var(--serif);font-style:italic;letter-spacing:0;color:var(--coral)}
+.f-intro h2{margin:0;font-family:var(--sans);font-weight:300;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(36px,4.6vw,60px);line-height:1.05}
+.f-intro h2 em{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none}
+.f-intro p{margin:0;max-width:46ch;font-size:14px;line-height:1.9;color:#cfc8c1;text-wrap:balance}
+.f-sign{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--pearl);margin-top:10px}
+.f-sign::before{content:"";width:64px;height:1px;background:#EEE7E066}
+
+
+.f-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:40px 32px;padding-bottom:clamp(48px,7vw,88px)}
+.f-col h3{margin:0 0 16px;font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--mist)}
+.f-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.5;color:#d9d2cc}
+.f-col a{border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
+.f-col a:hover{color:var(--coral);border-color:#E9BB7A80}
+.f-col .sel{user-select:all}
+.f-go{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:nowrap}
+.f-go .orb.sm{width:84px;height:84px;font-size:9.5px;letter-spacing:.22em;padding-left:.22em;line-height:1.6}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid #EEE7E01f;
+  padding-block:22px calc(22px + env(safe-area-inset-bottom,0px));font-size:11px;letter-spacing:.06em;color:var(--mist)}
+.f-bottom nav{display:flex;gap:24px;padding:0;grid-template-columns:none}
+.f-bottom a:hover{color:var(--pearl)}
+.f-up{background:none;border:1px solid #EEE7E040;color:var(--pearl);width:40px;height:40px;border-radius:50%;cursor:pointer;display:grid;place-items:center;transition:border-color .4s,box-shadow .4s}
+.f-up svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5}
+.f-up:hover,.f-up:focus-visible{border-color:var(--coral);outline:none;box-shadow:0 0 6px #E9BB7A99,0 0 20px #E9BB7A55}
+@media (max-width:980px){.f-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.f-go{grid-column:1/-1;justify-content:flex-start}}
+@media (max-width:480px){.f-grid{grid-template-columns:1fr}}
+</style>
+
+<footer id="contact">
+  <div class="f-top"><div class="f-mist" aria-hidden="true"></div>
+  <div class="f-intro">
+    <div class="f-mark">R<em>é</em>CIF</div>
+    <h2>Who we <em>are</em></h2>
+    <p>A small kitchen in the granite at the end of the Route des Sanguinaires. We cook what the boats bring in, light the room with candles and the sunset, and keep the tables few so every one of them faces the sea.</p>
+    <span class="f-sign">The RÉCIF family</span>
+  </div></div>
+
+
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col"><h3>Visit</h3><ul><li>Route des Sanguinaires</li><li>20000 Ajaccio</li><li>Corsica, France</li></ul></div>
+      <div class="f-col"><h3>Hours</h3><ul><li>Wed – Sun</li><li>17:30 – 23:00</li><li>Kitchen closes 22:30</li><li style="color:var(--mist)">Mon – Tue · closed</li></ul></div>
+      <div class="f-col"><h3>Contact</h3><ul><li class="sel">+33 4 95 00 00 00</li><li class="sel">table@recif.fr</li><li class="sel">events@recif.fr</li></ul></div>
+      <div class="f-col"><h3>Follow</h3><ul><li><a href="https://instagram.com">Instagram</a></li><li><a href="https://facebook.com">Facebook</a></li><li><a href="https://tiktok.com">TikTok</a></li></ul></div>
+      <div class="f-go">
+        <a class="orb sm" href="#book">Book<br>a table</a>
+        <a class="orb sm" href="#menu">See the<br>menu</a>
+        <a class="orb sm" href="https://maps.google.com/?q=Pointe+de+la+Parata+Ajaccio">Find<br>us</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 RÉCIF · Concept project · Imagery generated with AI</span>
+      <nav aria-label="Legal"><a href="#contact">Privacy</a><a href="#contact">Allergens</a><a href="#contact">Gift cards</a></nav>
+      <button class="f-up" id="f-up" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('f-up').onclick=()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+})();
+</script>
+<script>
+(()=>{const b=document.getElementById('menu-btn'),m=document.getElementById('mnav');
+  const set=o=>{m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);const fr=document.documentElement.lang==='fr';b.setAttribute('aria-label',o?(fr?'Fermer le menu':'Close menu'):(fr?'Ouvrir le menu':'Open menu'));document.documentElement.style.overflow=o?'hidden':'';};
+  b.onclick=()=>set(!m.classList.contains('open'));
+  m.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open')){set(false);b.focus();}});
+  addEventListener('resize',()=>{if(innerWidth>860&&m.classList.contains('open'))set(false);});
+})();
+(()=>{const n=document.getElementById('site-nav');const f=()=>n.classList.toggle('scrolled',scrollY>40);addEventListener('scroll',f,{passive:true});f();})();
+</script>
+
+
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const d=$('b-date'),tm=$('b-time'),g=$('b-guests');
+  const fmt=new Intl.DateTimeFormat('en-IE',{weekday:'short',day:'numeric',month:'short'});
+  const now=new Date();let added=0;
+  for(let i=0;added<21&&i<40;i++){
+    const x=new Date(now);x.setDate(now.getDate()+i);const wd=x.getDay();
+    if(wd===1||wd===2)continue;
+    const o=document.createElement('option');o.value=x.toISOString().slice(0,10);
+    o.textContent=i===0?'Today':i===1?'Tomorrow':fmt.format(x);d.append(o);added++;
+  }
+  for(let h=17;h<=22;h++)for(const m of [0,30]){if(h===17&&m===0)continue;const v=`${h}:${m?'30':'00'}`;const o=new Option(v,v);if(v==='19:00')o.selected=true;tm.append(o);}
+  for(let n=1;n<=8;n++){const o=new Option(n+(n===1?' guest':' guests'),n);if(n===2)o.selected=true;g.append(o);}
+  g.append(new Option('9+ (we will call you)','9+'));
+  const f=$('bform');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const name=$('b-name'),ph=$('b-phone');
+    let bad=null;
+    if(!name.value.trim())bad=name;else if(ph.value.replace(/\D/g,'').length<7)bad=ph;
+    if(bad){bad.style.borderBottomColor='#d98a7a';bad.focus();const FRL=document.documentElement.lang==='fr';bad.placeholder=bad===name?(FRL?'Indiquez votre nom':'Please add your name'):(FRL?'Indiquez un numéro de téléphone':'Please add a phone number');return;}
+    const nm=name.value.trim().replace(/[<>&]/g,''),gt=g.options[g.selectedIndex].text,dt=d.options[d.selectedIndex].text,isFr=document.documentElement.lang==='fr';
+    const seatEl=f.querySelector('input[name=seat]:checked');const seat=seatEl.nextElementSibling.textContent;
+    const today=/^(today|aujourd)/i.test(dt);const time=isFr?tm.value.replace(':','h'):tm.value;
+    const ref='RC-'+Math.random().toString(36).slice(2,6).toUpperCase();
+    const digits=ph.value.replace(/\D/g,''),phMask='•• '+digits.slice(-2);
+    $('book-ref').textContent=(isFr?'Demande de réservation · ':'Booking request · ')+ref;
+    $('book-msg').innerHTML=isFr?`Merci, <strong>${nm}</strong>. Votre table est réservée ${today?'pour aujourd’hui':'pour le '+dt} à ${time}.`:`Thank you, <strong>${nm}</strong>. Your table is on hold for ${today?'today':dt} at ${time}.`;
+    const rows=isFr?[['Date',dt],['Heure',time],['Convives',gt],['Place',seat]]:[['Date',dt],['Time',time],['Guests',gt],['Seating',seat]];
+    $('book-ticket').innerHTML=rows.map(r=>`<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('');
+    $('book-demo').textContent=isFr?`Démo : rien n’est envoyé. Sur le vrai site, un SMS avec la référence ${ref} partirait vers le numéro se terminant par ${phMask}, avec un lien pour modifier ou annuler, puis un rappel la veille.`:`Demo only: nothing is sent. On the live site, an SMS with reference ${ref} would go to the number ending ${phMask}, with a link to change or cancel, and a reminder the day before.`;
+    f.hidden=true;$('book-done').hidden=false;
+  });
+  ['b-name','b-phone'].forEach(id=>$(id).addEventListener('input',e=>e.target.style.borderBottomColor=''));
+  $('book-again').onclick=()=>{$('book-done').hidden=true;f.hidden=false;$('b-name').focus();};
+})();
+</script>
+
+
+<div class="expander" id="expander" hidden></div>
+
+<div class="mpage" id="mpage" hidden role="dialog" aria-modal="true" aria-labelledby="mp-title">
+  <div class="mp-bar">
+    <button class="mp-btn" id="mp-close" type="button" aria-label="Back to menu"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><span class="lbl">Back to menu</span></button>
+    <div class="mp-nav">
+      <button class="mp-btn" id="mp-prev" type="button" aria-label="Previous chapter"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span><b id="mp-idx">01</b> / 06</span>
+      <button class="mp-btn" id="mp-next" type="button" aria-label="Next chapter"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="mp-body">
+    <div class="mp-left">
+      <span class="mp-no" id="mp-no"></span>
+      <h2 id="mp-title"></h2>
+      <p class="mp-intro" id="mp-intro"></p>
+      <figure class="mp-img" id="mp-img"></figure>
+    </div>
+    <div>
+      <div id="mp-groups"></div>
+      <p class="mp-foot">Prices include VAT. The kitchen will gladly talk you through allergens; please mention them when you book.</p>
+      <div class="mp-next"><button class="orb sm" id="mp-next2" type="button">Next<br><span id="mp-next-lbl"></span></button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(()=>{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const MENU=[
+    {id:'raw-bar',tone:'dark',name:'Raw bar',title:'From the <em>ice</em>',intro:'Served cold and simply, so you taste the water it came from. Oysters are opened to order; everything else is cut minutes before it reaches you.',
+     groups:[{h:'Oysters',items:[['Diana lagoon oyster','Each · shallot and myrtle mignonette','€4.50'],['Oysters, half dozen','With country bread and salted butter','€24']]},
+             {h:'Crudo & cured',items:[['Scallop crudo','Cucumber, dill oil, lime','€16'],['Red tuna tartare','Cured egg yolk, nori crisp','€18'],['Sea bream carpaccio','Blood orange, wild fennel','€15'],['Bottarga, shaved','Aged mullet roe, lemon, olive oil','€19']]}]},
+    {id:'hearth',tone:'dark',name:'Hearth',title:'From the <em>fire</em>',intro:'An open hearth of olive and holm-oak wood. Fish is cooked whole on the bone and brought to the table to share.',
+     groups:[{h:'To share',items:[['Whole sea bass, for two','Brown butter, capers, charred lemon','€78'],['Grilled octopus','Pearl onions, herb oil, smoked paprika','€34']]},
+             {h:'Mains',items:[['Red mullet & mussels','Saffron broth, sea herbs','€32'],['Langoustines','Seaweed butter, grilled sourdough','€29'],['Corsican lobster','Half, grilled, citrus butter','€58'],['Dry-aged ribeye','For those who prefer land · bone-marrow jus','€42']]}]},
+    {id:'garden',tone:'dark',name:'Garden',title:'Shore &amp; <em>field</em>',intro:'Vegetables from small farms inland, finished with herbs we pick in the maquis above the restaurant.',
+     groups:[{h:'Sides & greens',items:[['Grilled asparagus','Brocciu, lemon zest, thyme','€11'],['Roast potatoes','Rosemary, sea salt','€7'],['Mozzarella & charred tomatoes','Rocket, grilled courgette, pine nuts, olive oil','€14'],['Grilled vegetables','Peppers, aubergine, basil oil','€10'],['Island olives','Marinated with orange and fennel','€6']]}]},
+    {id:'desserts',tone:'dark',name:'Desserts',title:'Sweet <em>tide</em>',intro:'A short list that ends the evening quietly, usually just as the sun touches the sea.',
+     groups:[{h:'Desserts',items:[['Panna cotta','Passion fruit, honey tuile, garden flowers','€11'],['Fiadone','Brocciu cheesecake, lemon, red berries','€10'],['Dark chocolate','Olive oil, smoked salt, cocoa nib','€12']]},
+             {h:'To finish',items:[['Corsican cheese','Three island cheeses, fig jam, walnut bread','€16'],['Canistrelli','Almond and white-wine biscuits, to share','€6']]}]},
+    {id:'drinks',tone:'dark',name:'Drinks',title:'Salt &amp; <em>glass</em>',intro:'Island wines that suit the fish, cocktails with a pinch of the sea, and a zero-proof list made with the same care.',
+     groups:[{h:'Cocktails',items:[['Rosemary G&T','Gin, tonic, rosemary, lemon peel','€13'],['Reef Spritz','Aperitivo, blood orange, prosecco','€13'],['Sanguinaires Martini','Gin, dry vermouth, myrtle','€15'],['Salt & Smoke','Mezcal, lime, agave, sea-salt rim','€15']]},
+             {h:'Wine by the glass',items:[['Vermentino, Ajaccio','Crisp, saline, citrus','€11'],['Sciaccarellu rosé, Ajaccio','Pale, peppery, made for the terrace','€10'],['Patrimonio blanc','Flint, white peach','€14'],['Champagne, brut','Fine bubbles, brioche','€18']]},
+             {h:'Zero-proof',items:[['Cucumber tonic','Cucumber, thyme, tonic','€7'],['Garden cordial','Elderflower, basil, soda','€6'],['Blood orange soda','House-made, lightly sweet','€6']]}]},
+    {id:'tasting',tone:'dark',name:'Tasting',title:'The whole <em>reef</em>',intro:'Seven courses from the morning\'s catch, served to the whole table. Allow around two and a half hours.',
+     groups:[{h:'Seven courses · €95 per guest',items:[['Oyster','Myrtle, frozen cucumber',''],['Scallop','Raw, with dill and brown butter',''],['Sea bream','Blood orange, wild fennel',''],['Langoustine','From the hearth, seaweed butter',''],['Sea bass','On the bone, capers, charred lemon',''],['Cheese','One island cheese, fig',''],['Panna cotta','Passion fruit, honey tuile','']]},
+             {h:'Pairings',items:[['Wine pairing','Five Corsican wines chosen for the menu','€60'],['Zero-proof pairing','Five house-made drinks','€35']]}]}
+  ];
+  const $=id=>document.getElementById(id);
+  const strip=$('strip'),panels=[...strip.querySelectorAll('.panel')],page=$('mpage'),exp=$('expander');
+  const toneBg={dark:'#0b0d0f',gold:'#E9BB7A',pearl:'#EEE7E0'};
+
+  /* strip: arrows, progress, motion blur, drag */
+  const step=()=>panels[0].getBoundingClientRect().width;
+  $('arw-prev').onclick=()=>strip.scrollBy({left:-step(),behavior:'smooth'});
+  $('arw-next').onclick=()=>strip.scrollBy({left:step(),behavior:'smooth'});
+  let lastX=strip.scrollLeft,blur=0,raf=0;
+  function tick(){
+    const x=strip.scrollLeft,v=Math.abs(x-lastX);lastX=x;
+    blur=reduce?0:Math.max(v*.12,blur*.82);
+    strip.style.setProperty('--blur',(blur<.05?0:Math.min(blur,5)).toFixed(2)+'px');
+    const max=strip.scrollWidth-strip.clientWidth;
+    $('strip-bar').parentElement.style.setProperty('--p',(max>0?(strip.clientWidth/strip.scrollWidth)+(1-strip.clientWidth/strip.scrollWidth)*(x/max):1).toFixed(3));
+    $('arw-prev').disabled=x<4;$('arw-next').disabled=x>max-4;
+    raf=(v>0||blur>.05)?requestAnimationFrame(tick):0;
+  }
+  strip.addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(tick);},{passive:true});
+  tick();
+  let down=null,moved=false;
+  strip.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down={x:e.clientX,s:strip.scrollLeft};moved=false;});
+  addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-down.x;if(Math.abs(dx)>5){moved=true;strip.classList.add('drag');}if(moved)strip.scrollLeft=down.s-dx;});
+  addEventListener('pointerup',()=>{if(!down)return;down=null;if(moved){strip.classList.remove('drag');const w=step();strip.scrollTo({left:Math.round(strip.scrollLeft/w)*w,behavior:'smooth'});}});
+  strip.addEventListener('click',e=>{if(moved){e.preventDefault();moved=false;}},true);
+
+  /* category page */
+  let cur=-1,fromPanel=null;
+  function render(i){
+    const L=(window.__recifLang&&window.__recifLang()==='fr'&&window.RECIF_MENU_FR)||MENU;const c=L[i];cur=i;
+    page.dataset.tone=c.tone;
+    $('mp-idx').textContent=String(i+1).padStart(2,'0');
+    $('mp-no').textContent=String(i+1).padStart(2,'0')+' · '+c.name;
+    $('mp-title').innerHTML=c.title;
+    $('mp-intro').textContent=c.intro;
+    const fig=$('mp-img');const src=panels[i].querySelector('img');
+    fig.className='mp-img'+(src?'':' sunimg');
+    fig.innerHTML=src?`<img src="${src.src}" alt="">`:'€95';
+    $('mp-groups').innerHTML=c.groups.map(g=>`<section class="mp-group"><h3>${g.h}</h3><ul class="mp-list">${g.items.map((d,k)=>`<li class="mp-dish" style="transition-delay:${Math.min(k,8)*50}ms"><span>${d[0]}</span><b>${d[2]}</b><small>${d[1]}</small></li>`).join('')}</ul></section>`).join('');
+    const n=L[(i+1)%L.length];$('mp-next-lbl').textContent=n.name;
+    page.scrollTop=0;
+  }
+  window.__recifRender=()=>{if(!page.hidden)render(cur);};
+  function openCat(i,animate){
+    render(i);
+    document.documentElement.style.overflow='hidden';
+    const p=panels[i];fromPanel=p;
+    const show=()=>{page.hidden=false;page.classList.remove('in');void page.offsetWidth;page.classList.add('in');setTimeout(()=>{exp.hidden=true;},500);$('mp-close').focus({preventScroll:true});};
+    if(!animate||reduce){show();return;}
+    const r=p.getBoundingClientRect();
+    Object.assign(exp.style,{top:r.top+'px',left:r.left+'px',width:r.width+'px',height:r.height+'px',background:toneBg[MENU[i].tone],borderRadius:'14px'});
+    exp.hidden=false;void exp.offsetWidth;
+    Object.assign(exp.style,{top:'0px',left:'0px',width:innerWidth+'px',height:innerHeight+'px',borderRadius:'0px'});
+    setTimeout(show,720);
+  }
+  function closeCat(){
+    if(page.hidden)return;
+    const p=panels[cur];
+    page.classList.remove('in');
+    const done=()=>{page.hidden=true;document.documentElement.style.overflow='';p.focus({preventScroll:true});};
+    if(reduce){done();exp.hidden=true;return;}
+    p.scrollIntoView({block:'nearest',inline:'nearest'});
+    const r=p.getBoundingClientRect();
+    Object.assign(exp.style,{top:'0px',left:'0px',width:innerWidth+'px',height:innerHeight+'px',background:toneBg[MENU[cur].tone],borderRadius:'0px'});
+    exp.hidden=false;
+    setTimeout(()=>{page.hidden=true;void exp.offsetWidth;
+      Object.assign(exp.style,{top:r.top+'px',left:r.left+'px',width:r.width+'px',height:r.height+'px',borderRadius:'14px'});
+      setTimeout(()=>{exp.hidden=true;done();},760);
+    },300);
+  }
+  const idxOf=h=>MENU.findIndex(c=>'menu-'+c.id===h);
+  panels.forEach((p,i)=>p.addEventListener('click',e=>{e.preventDefault();if(location.hash!=='#menu-'+MENU[i].id){history.pushState(null,'','#menu-'+MENU[i].id);}openCat(i,true);}));
+  const body=page.querySelector('.mp-body');
+  const go=d=>{const i=(cur+d+MENU.length)%MENU.length;history.replaceState(null,'','#menu-'+MENU[i].id);
+    if(reduce){render(i);return;}
+    body.classList.add('swap');
+    setTimeout(()=>{render(i);page.querySelectorAll('.mp-dish').forEach(x=>{x.style.transition='none';x.style.transform='translateY(14px)';});
+      void body.offsetWidth;body.classList.remove('swap');
+      page.querySelectorAll('.mp-dish').forEach(x=>{x.style.transition='';x.style.transform='';});},260);};
+  $('mp-prev').onclick=()=>go(-1);$('mp-next').onclick=()=>go(1);$('mp-next2').onclick=()=>go(1);
+  const back=()=>{history.replaceState(null,'','#menu');closeCat();};
+  $('mp-close').onclick=back;
+  addEventListener('keydown',e=>{if(page.hidden)return;if(e.key==='Escape')back();if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);});
+  addEventListener('popstate',()=>{const i=idxOf(location.hash.slice(1));if(i>=0)openCat(i,false);else closeCat();});
+  const i0=idxOf(location.hash.slice(1));if(i0>=0)openCat(i0,false);
+})();
+</script>
+
+
+<script>
+addEventListener('DOMContentLoaded',()=>{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+
+  // split headings into words
+  const build=()=>[...document.querySelectorAll('[data-reveal]')].map(h=>{
+    h.querySelectorAll('.ln').forEach(ln=>{
+      [...ln.childNodes].forEach(node=>{
+        if(node.nodeType===3){
+          const frag=document.createDocumentFragment();
+          node.textContent.split(/(\s+)/).forEach(p=>{
+            if(!p) return;
+            if(/^\s+$/.test(p)){frag.append(p);return;}
+            const s=document.createElement('span');s.className='w';s.textContent=p;frag.append(s);
+          });
+          node.replaceWith(frag);
+        }else if(node.nodeType===1){node.classList.add('w');}
+      });
+    });
+    return {el:h,words:[...h.querySelectorAll('.w')]};
+  });
+  let heads=build();
+  window.__recifReveal=()=>{heads=build();frame();};
+
+  const band=document.getElementById('band-img');
+  const pill=document.getElementById('pillars');
+  const words=[...pill.querySelectorAll('.reel-word')];
+  const cols=[...pill.querySelectorAll('.col')];
+  const countN=document.getElementById('count-n');
+  let lastIdx=-1;
+
+  function frame(){
+    const vh=innerHeight;
+    if(!reduce){
+      heads.forEach(({el,words})=>{
+        const r=el.getBoundingClientRect();
+        const p=clamp((vh*.92-r.top)/(vh*.55));
+        const n=words.length;
+        words.forEach((w,i)=>w.style.setProperty('--t',clamp(p*(n+1.5)-i).toFixed(3)));
+      });
+      const br=band.parentElement.getBoundingClientRect();
+      band.style.setProperty('--z',(1+.18*clamp(br.bottom/(vh+br.height))).toFixed(4));
+    }
+    const pr=pill.getBoundingClientRect();
+    const q=clamp(-pr.top/(pr.height-vh));
+    const raw=q*(words.length-1),base=Math.floor(raw),f=raw-base,s=clamp((f-.3)/.4),a=Math.min(words.length-1,base+s*s*(3-2*s));
+    pill.style.setProperty('--q',q.toFixed(3));
+    pill.style.setProperty('--a',a.toFixed(3));
+    words.forEach((w,i)=>w.style.setProperty('--d',Math.abs(i-a).toFixed(3)));
+    const idx=Math.round(a);
+    if(idx!==lastIdx){
+      cols.forEach((c,i)=>c.classList.toggle('on',i===idx));
+      countN.textContent=String(idx+1).padStart(2,'0');
+      lastIdx=idx;
+    }
+  }
+  let ticking=false;
+  addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{frame();ticking=false;});}},{passive:true});
+  addEventListener('resize',frame);
+  frame();
+
+  // cards rise in, staggered
+  const cards=[...document.querySelectorAll('.card.pre')];
+  if('IntersectionObserver' in window && !reduce){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting){const i=cards.indexOf(e.target);e.target.style.transitionDelay=(i%3)*90+'ms';e.target.classList.remove('pre');io.unobserve(e.target);}
+    }),{threshold:.15});
+    cards.forEach(c=>io.observe(c));
+  }else cards.forEach(c=>c.classList.remove('pre'));
+});
+</script>
+<script>
+window.RECIF_MENU_FR=[
+ {id:'raw-bar',tone:'dark',name:'Bar cru',title:'De la <em>glace</em>',intro:'Servi froid et simplement, pour goûter l’eau d’où il vient. Les huîtres sont ouvertes à la commande ; tout le reste est tranché quelques minutes avant de vous arriver.',
+  groups:[{h:'Huîtres',items:[['Huître de l’étang de Diana','La pièce · mignonnette échalote et myrte','4,50 €'],['Huîtres, la demi-douzaine','Pain de campagne et beurre salé','24 €']]},
+          {h:'Crudo & marinés',items:[['Crudo de saint-jacques','Concombre, huile d’aneth, citron vert','16 €'],['Tartare de thon rouge','Jaune d’œuf confit, chips de nori','18 €'],['Carpaccio de daurade','Orange sanguine, fenouil sauvage','15 €'],['Poutargue','Œufs de mulet affinés, citron, huile d’olive','19 €']]}]},
+ {id:'hearth',tone:'dark',name:'Foyer',title:'Du <em>feu</em>',intro:'Un foyer ouvert au bois d’olivier et de chêne vert. Le poisson est cuit entier sur l’arête et servi à partager.',
+  groups:[{h:'À partager',items:[['Loup entier, pour deux','Beurre noisette, câpres, citron grillé','78 €'],['Poulpe grillé','Oignons grelots, huile d’herbes, paprika fumé','34 €']]},
+          {h:'Plats',items:[['Rouget & moules','Bouillon au safran, herbes de mer','32 €'],['Langoustines','Beurre d’algues, pain au levain grillé','29 €'],['Langouste corse','La demie, grillée, beurre d’agrumes','58 €'],['Côte de bœuf maturée','Pour les amateurs de terre · jus à la moelle','42 €']]}]},
+ {id:'garden',tone:'dark',name:'Jardin',title:'Rivage &amp; <em>champ</em>',intro:'Des légumes de petites fermes de l’intérieur, relevés d’herbes cueillies dans le maquis au-dessus du restaurant.',
+  groups:[{h:'Accompagnements',items:[['Asperges grillées','Brocciu, zeste de citron, thym','11 €'],['Pommes de terre rôties','Romarin, sel marin','7 €'],['Mozzarella & tomates grillées','Roquette, courgette grillée, pignons, huile d’olive','14 €'],['Légumes grillés','Poivrons, aubergine, huile de basilic','10 €'],['Olives de l’île','Marinées à l’orange et au fenouil','6 €']]}]},
+ {id:'desserts',tone:'dark',name:'Desserts',title:'Douce <em>marée</em>',intro:'Une courte liste pour finir la soirée en douceur, souvent au moment où le soleil touche la mer.',
+  groups:[{h:'Desserts',items:[['Panna cotta','Fruit de la passion, tuile au miel, fleurs du jardin','11 €'],['Fiadone','Gâteau au brocciu, citron, fruits rouges','10 €'],['Chocolat noir','Huile d’olive, sel fumé, grué de cacao','12 €']]},
+          {h:'Pour finir',items:[['Fromages corses','Trois fromages de l’île, confiture de figues, pain aux noix','16 €'],['Canistrelli','Biscuits aux amandes et au vin blanc, à partager','6 €']]}]},
+ {id:'drinks',tone:'dark',name:'Boissons',title:'Sel &amp; <em>verre</em>',intro:'Des vins de l’île qui accompagnent le poisson, des cocktails iodés et une carte sans alcool préparée avec le même soin.',
+  groups:[{h:'Cocktails',items:[['Rosemary G&T','Gin, tonic, romarin, zeste de citron','13 €'],['Reef Spritz','Apéritif, orange sanguine, prosecco','13 €'],['Sanguinaires Martini','Gin, vermouth sec, myrte','15 €'],['Salt & Smoke','Mezcal, citron vert, agave, bord de sel marin','15 €']]},
+          {h:'Vins au verre',items:[['Vermentino, Ajaccio','Vif, salin, agrumes','11 €'],['Sciaccarellu rosé, Ajaccio','Pâle, poivré, fait pour la terrasse','10 €'],['Patrimonio blanc','Pierre à fusil, pêche blanche','14 €'],['Champagne brut','Bulles fines, brioche','18 €']]},
+          {h:'Sans alcool',items:[['Tonic concombre','Concombre, thym, tonic','7 €'],['Cordial du jardin','Sureau, basilic, eau pétillante','6 €'],['Soda orange sanguine','Maison, légèrement sucré','6 €']]}]},
+ {id:'tasting',tone:'dark',name:'Dégustation',title:'Tout le <em>récif</em>',intro:'Sept services selon la pêche du matin, servis à toute la table. Comptez environ deux heures et demie.',
+  groups:[{h:'Sept services · 95 € par personne',items:[['Huître','Myrte, concombre glacé',''],['Saint-jacques','Crue, aneth et beurre noisette',''],['Daurade','Orange sanguine, fenouil sauvage',''],['Langoustine','Du foyer, beurre d’algues',''],['Loup','Sur l’arête, câpres, citron grillé',''],['Fromage','Un fromage de l’île, figue',''],['Panna cotta','Fruit de la passion, tuile au miel','']]},
+          {h:'Accords',items:[['Accord mets et vins','Cinq vins corses choisis pour le menu','60 €'],['Accord sans alcool','Cinq boissons maison','35 €']]}]}
+];
+(()=>{
+  const FR=[
+    ['.site-nav ul:first-of-type a',['À propos','Carte','Galerie']],
+    ['.site-nav ul:last-of-type a',['Avis','Réserver','Contact']],
+    ['.mnav ol a',['À propos','La <em>carte</em>','Galerie','Avis','Réserver une <em>table</em>','Contact']],
+    ['.mnav-info > span','Route des Sanguinaires, Ajaccio<br>Mer – Dim · 17h30 – 23h00'],
+    ['.mnav-foot .orb','Réserver<br>une table'],
+    ['.hero .side','Bienvenue'],
+    ['.hero .eyebrow','Fruits de mer · Bar cru · Vins'],
+    ['.hero .lede','Un restaurant taillé dans le granit face aux îles Sanguinaires. Huîtres de l’étang de Diana, poissons de petite pêche du golfe d’Ajaccio et herbes du maquis, servis pendant que le soleil plonge dans la mer.'],
+    ['.hero .actions .orb','Réserver<br>une table'],
+    ['.hero .hours','Mer – Dim · 17h30 – 23h00'],
+    ['#about .tag','(À propos)'],
+    ['#about .side-col p','RÉCIF est construit dans la roche : un anneau de verre au-dessus de l’eau, éclairé à la bougie et au feu de bois. Nous cuisinons ce que les bateaux rapportent à Ajaccio le matin même, et rien dans l’assiette ne vient de plus loin que la baie que vous voyez depuis votre table.'],
+    ['#about-h .ln',['Une table','au bord','du <em>récif</em>']],
+    ['#pillars .tag','(Notre cuisine)'],
+    ['#pillars .reel-word',['Marée','Pierre','Feu','Sel']],
+    ['#pillars .col h3',['Marée','Pierre','Feu','Sel']],
+    ['#pillars .col p',['La carte suit la mer. Poisson débarqué à l’aube à Ajaccio, inscrit à la craie à midi, épuisé le soir.','Construit dans la roche, pas dessus. La salle épouse la falaise pour que chaque table fasse face à la mer.','Un foyer ouvert au bois d’olivier et de chêne vert. Nous cuisinons à la flamme, simplement, et laissons parler le poisson.','Huîtres de l’étang de Diana, fenouil sauvage et myrte du maquis, et sel marin séché sur notre propre terrasse.']],
+    ['#menu .tag','(Carte)'],
+    ['#menu-h .ln',['Goûtez','la <em>marée</em>']],
+    ['#menu .note','Six chapitres, écrits chaque après-midi selon la pêche. Ouvrez-en un pour voir la carte complète.'],
+    ['.panel .p-top span:first-child',['01 · Bar cru','02 · Foyer','03 · Jardin','04 · Desserts','05 · Boissons','06 · Dégustation']],
+    ['.panel .p-top span:last-child',['6 plats','6 plats','5 plats','5 plats','10 verres','7 services']],
+    ['.panel .p-title',['De la <em>glace</em>','Du <em>feu</em>','Rivage &amp; <em>champ</em>','Douce <em>marée</em>','Sel &amp; <em>verre</em>','Tout le <em>récif</em>']],
+    ['.panel .p-desc',['Huîtres, crudo et poissons marinés, tout droit des bateaux du matin.','Poissons entiers et crustacés cuits au bois d’olivier.','Légumes du potager, herbes du maquis et huile d’olive de l’île.','Panna cotta, miel de châtaignier et fromages corses.','Vins de l’île, cocktails iodés et sans alcool.','Sept services selon la pêche, pour toute la table. 95 €.']],
+    ['.panel .p-open','Ouvrir'],
+    ['.strip-hint > span:first-child','Glissez ou utilisez les flèches'],
+    ['.mp-foot','Prix TTC. La cuisine vous renseigne volontiers sur les allergènes ; merci de les signaler à la réservation.'],
+    ['#gallery .tag','(Galerie)'],
+    ['#gal-h .ln',['Soirées','au <em>récif</em>']],
+    ['#gallery .note','La salle, la terrasse et le rocher à l’heure que nos hôtes préfèrent : les quarante dernières minutes de lumière.'],
+    ['.gal figcaption',['La terrasse','Samedi soir','La salle de verre','Le bar','La cuisine','Pointe de la Parata']],
+    ['#reviews .tag','(Avis)'],
+    ['#rv-h .ln',['Paroles','de <em>table</em>']],
+    ['.rv-score p','Note moyenne des clients. Avis d’exemple rédigés pour ce concept.'],
+    ['.quote blockquote',['Nous avions réservé pour le coucher du soleil et sommes restés bien après. Le poulpe du foyer était le meilleur plat de l’île, et le serveur a <em>servi le dessert</em> avec la dernière lumière.','Calme, aux chandelles et sans aucune précipitation. Nous avons laissé la cuisine choisir le menu dégustation, et chaque plat <em>avait le goût de la mer</em> que nous regardions.','Des huîtres de l’étang, un verre de Vermentino et les Sanguinaires qui virent au rose. <em>Une première soirée parfaite</em> à Ajaccio. Réservez la terrasse, elle en vaut la peine.','Ils se sont souvenus de notre anniversaire sans qu’on ait à le redire. La table près de la rambarde de verre, une bougie et <em>rien que l’eau</em> entre nous et l’horizon.']],
+    ['.quote footer span',['· Lyon · juin','· Milan · juillet','· Londres · août','· Cracovie · septembre']],
+    ['#book-h','Une table pour <em>vous</em>'],
+    ['.fld > label',['Nom','Téléphone','Date','Heure','Convives','Souhaits <span style="color:var(--mist);font-weight:300">(facultatif)</span>']],
+    ['.book-actions .orb','Réserver<br>une table'],
+    ['.book-note','Nous confirmons chaque réservation par téléphone dans l’heure. Mer – Dim · 17h30 – 23h00'],
+    ['#book-again','Modifier la réservation'],
+    ['.f-intro h2','Qui <em>sommes-nous</em>'],
+    ['.f-intro p','Une petite cuisine dans le granit, au bout de la route des Sanguinaires. Nous cuisinons ce que rapportent les bateaux, éclairons la salle aux bougies et au couchant, et gardons peu de tables pour que chacune fasse face à la mer.'],
+    ['.f-sign','La famille RÉCIF'],
+    ['.f-col h3',['Adresse','Horaires','Contact','Suivez-nous']],
+    ['.f-col:nth-child(1) li:nth-child(3)','Corse, France'],
+    ['.f-col:nth-child(2) li',['Mer – Dim','17h30 – 23h00','Cuisine jusqu’à 22h30','Lun – Mar · fermé']],
+    ['.f-go .orb',['Réserver<br>une table','Voir la<br>carte','Nous<br>trouver']],
+    ['.f-bottom > span','© 2026 RÉCIF · Projet conceptuel · Images générées par IA'],
+    ['.f-bottom nav a',['Confidentialité','Allergènes','Cartes cadeaux']],
+    ['#b-seat legend','Où souhaitez-vous vous asseoir ?'],
+    ['.chip span',['Terrasse','Salle de verre','Bar','Sans préférence']]
+  ];
+  const FR_ATTR=[
+    ['.hero .bg','aria-label','Restaurant de verre sur les rochers au crépuscule, terrasse aux chandelles au-dessus de l’eau'],
+    ['#band-img','alt','Vue aérienne du restaurant rond et de ses terrasses sur les rochers au-dessus de la mer, la nuit'],
+    ['#pillars','aria-label','Notre cuisine'],
+    ['#strip','aria-label','Chapitres de la carte'],
+    ['.panel img',['Huître au caviar sur glace pilée','Poulpe grillé, oignons grelots et huile d’herbes','Salade de roquette, mozzarella et tomates grillées en terrasse au coucher du soleil','Panna cotta au fruit de la passion et tuile au miel','Gin tonic au romarin et au citron au coucher du soleil','Chef dressant des gambas grillées à la pince'],'alt'],
+    ['.gal img',['Tables en terrasse et escaliers éclairés sur les rochers au coucher du soleil','Convives aux chandelles sous les oliviers, les lumières de la baie en arrière-plan','Salle de verre incurvée avec un olivier, face à un rocher dans la mer','Bar incurvé aux étagères rétroéclairées, un barman prépare un cocktail','Chefs dressant les assiettes sous des lampes en cuivre dans la cuisine ouverte','Pavillons de verre et escaliers du restaurant sur la pointe de granit au crépuscule'],'alt'],
+    ['.book-bg','aria-label','Table aux chandelles au bord de la terrasse au coucher du soleil'],
+    ['#menu-btn','aria-label','Ouvrir le menu'],
+    ['#mnav','aria-label','Menu du site'],
+    ['.lang','aria-label','Langue'],
+    ['#arw-prev','aria-label','Chapitre précédent'],['#arw-next','aria-label','Chapitre suivant'],
+    ['#mp-prev','aria-label','Chapitre précédent'],['#mp-next','aria-label','Chapitre suivant'],['#mp-close','aria-label','Retour à la carte'],
+    ['#rv-prev','aria-label','Avis précédent'],['#rv-next','aria-label','Avis suivant'],
+    ['.stars','aria-label','Cinq étoiles'],
+    ['#f-up','aria-label','Retour en haut'],
+    ['.f-bottom nav','aria-label','Mentions légales']
+  ];
+  const attrStore=[];
+  FR_ATTR.forEach(r=>{
+    let sel=r[0],attr,vals;
+    if(Array.isArray(r[1])){vals=r[1];attr=r[2];}else{attr=r[1];vals=r[2];}
+    document.querySelectorAll(sel).forEach((el,i)=>{const v=Array.isArray(vals)?vals[i]:vals;if(v!==undefined&&el.hasAttribute(attr))attrStore.push({el,attr,en:el.getAttribute(attr),fr:v});});
+  });
+  const PH={'b-name':'Votre nom','b-note':'Un anniversaire, une table près de la vitre, des allergies…'};
+  const store=[];
+  FR.forEach(([sel,fr])=>{
+    const els=[...document.querySelectorAll(sel)];
+    els.forEach((el,i)=>{const v=Array.isArray(fr)?fr[i]:fr;if(v!==undefined)store.push({el,en:el.innerHTML,fr:v});});
+  });
+  const phEn={};Object.keys(PH).forEach(id=>{const el=document.getElementById(id);if(el)phEn[id]=el.placeholder;});
+  const nextBtn=document.getElementById('mp-next2');
+  const fmtEn=new Intl.DateTimeFormat('en-IE',{weekday:'short',day:'numeric',month:'short'});
+  const fmtFr=new Intl.DateTimeFormat('fr-FR',{weekday:'short',day:'numeric',month:'short'});
+  function relabelSelects(fr){
+    const d=document.getElementById('b-date');
+    if(d)[...d.options].forEach((o,i)=>{const x=new Date(o.value+'T12:00');const t=new Date();t.setHours(12,0,0,0);const diff=Math.round((x-t)/864e5);
+      o.textContent=diff===0?(fr?'Aujourd’hui':'Today'):diff===1?(fr?'Demain':'Tomorrow'):(fr?fmtFr:fmtEn).format(x);});
+    const g=document.getElementById('b-guests');
+    if(g)[...g.options].forEach(o=>{if(o.value==='9+')o.textContent=fr?'9+ (nous vous appellerons)':'9+ (we will call you)';else{const n=+o.value;o.textContent=fr?n+(n===1?' convive':' convives'):n+(n===1?' guest':' guests');}});
+  }
+  function apply(lang){
+    const fr=lang==='fr';
+    document.documentElement.lang=fr?'fr':'en';
+    store.forEach(s=>{s.el.innerHTML=fr?s.fr:s.en;});
+    attrStore.forEach(s=>s.el.setAttribute(s.attr,fr?s.fr:s.en));
+    if(window.__recifReveal)window.__recifReveal();
+    Object.keys(phEn).forEach(id=>{document.getElementById(id).placeholder=fr?PH[id]:phEn[id];});
+    if(nextBtn&&nextBtn.firstChild&&nextBtn.firstChild.nodeType===3)nextBtn.firstChild.textContent=fr?'Suite':'Next';
+    relabelSelects(fr);
+    document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===lang));
+    if(window.__recifRender)window.__recifRender();
+    try{localStorage.setItem('recif-lang',lang);}catch(e){}
+  }
+  window.__recifLang=()=>document.documentElement.lang==='fr'?'fr':'en';
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>apply(b.dataset.lang)));
+  let saved='en';try{saved=localStorage.getItem('recif-lang')||'en';}catch(e){}
+  apply(saved==='fr'?'fr':'en');
+})();
+</script>
+
+</body>
+</html>
